@@ -393,6 +393,9 @@ class FeetechMotorsBus:
                 f"Setting bus baud rate to {baudrate}. Previously {present_bus_baudrate}."
             )
             self.port_handler.setBaudRate(baudrate)
+            
+            from time import sleep
+            sleep(5)
 
             if self.port_handler.getBaudRate() != baudrate:
                 raise OSError("Failed to write bus baud rate.")

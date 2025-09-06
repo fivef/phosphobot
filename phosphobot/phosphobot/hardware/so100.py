@@ -38,7 +38,7 @@ class SO100Hardware(BaseManipulator):
     }
 
     SERVO_IDS = [1, 2, 3, 4, 5, 6]
-    BAUDRATE = 1000000  # Baud rate
+    BAUDRATE = 115200  # Baud rate
     RESOLUTION = 4096  # 12-bit resolution
 
     # Measured offset on the servos

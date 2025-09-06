@@ -36,7 +36,7 @@ from phosphobot.hardware.motors.motor_utils import (
 )
 
 PROTOCOL_VERSION = 0
-BAUDRATE = 1_000_000
+BAUDRATE = 115200
 TIMEOUT_MS = 1000
 
 MAX_ID_RANGE = 252
@@ -996,6 +996,9 @@ class FeetechMotorsBus:
                 f"Setting bus baud rate to {baudrate}. Previously {present_bus_baudrate}."
             )
             self.port_handler.setBaudRate(baudrate)
+            
+            from time import sleep
+            sleep(5)
 
             if self.port_handler.getBaudRate() != baudrate:
                 raise OSError("Failed to write bus baud rate.")
