@@ -43,7 +43,7 @@ env:
   PROJECT_ID: portal-385519
   REGION: europe-west1
   FORMULA_NAME: phosphobot
-  HOMEBREW_TAP: phospho-app/homebrew-phosphobot
+  HOMEBREW_TAP: fivef/phosphobot
   BRANCH_NAME: ${{ github.ref_name}}
   COMMIT_ID: ${{ github.sha }}
   HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -964,7 +964,7 @@ jobs:
           cat > homebrew-tap/Formula/${{ env.FORMULA_NAME }}.rb << EOF
           class Phosphobot < Formula
             desc "Phosphobot teleop application for robot control"
-            homepage "https://github.com/phospho-app/phosphobot"
+            homepage "https://github.com/fivef/phosphobot"
             license "MIT"
             version "${{ env.VERSION }}"
             
